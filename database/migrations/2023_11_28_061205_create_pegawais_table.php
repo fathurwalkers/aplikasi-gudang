@@ -10,6 +10,12 @@ return new class extends Migration
     {
         Schema::create('pegawai', function (Blueprint $table) {
             $table->id();
+
+            $table->string('pegawai_nama')->nullable();
+            $table->string('pegawai_jabatan')->nullable();
+            $table->string('pegawai_alamat')->nullable();
+            $table->string('pegawai_nohp')->nullable();
+
             $table->timestamps();
         });
     }
