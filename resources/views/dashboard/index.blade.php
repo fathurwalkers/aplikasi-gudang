@@ -13,23 +13,6 @@
 @section('main-content')
     <div class="container mt-2">
 
-        <div class="card border border-grey">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-sm-6 col-md-6 col-lg-6">
-                        <h5 class="text-dark">RT 031 BATU AMPAR</h5>
-                        <p class="text-dark">
-                            Website Sistem Informasi ini menyediakan beberapa pelayanan seperti pembuatan surat, informasi
-                            KAS, berita kegiatan, pengaduan berbasis IOT dan lain sebagainya.
-                        </p>
-                    </div>
-                    <div class="col-sm-6 col-md-6 col-lg-6 d-flex justify-content-center">
-                        <img src="{{ asset('assets') }}/logo-rt.jpg" class="img img-fluid" width="150px" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="row">
 
             <div class="col-sm-3 col-md-3 col-lg-3">
@@ -38,7 +21,7 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-uppercase mb-1">Pengaduan</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $pengaduan }}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">2</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-envelope text-warning"></i>
@@ -54,7 +37,7 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-uppercase mb-1">Kritik dan Saran</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $kritiksaran }}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">2</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-envelope text-info"></i>
@@ -70,7 +53,7 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-uppercase mb-1">Surat</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $surat }}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">4</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-calendar fa-2x text-primary"></i>
@@ -86,7 +69,7 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-uppercase mb-1">Informasi</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $berita }}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">4</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-envelope fa-2x text-primary"></i>
