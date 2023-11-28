@@ -11,6 +11,11 @@ use App\Http\Controllers\{
     HomeController
 };
 
+// Route Default ketika aplikasi Pertama Kali di Akses akan langsung diarahkan ke Halaman /home
+Route::get('/', function() {
+    return redirect()->route('dashboard');
+});
+
 // Route untuk Halaman Login
 Route::get('/login', [BackController::class, 'login'])->name('login');
 // Route untuk Proses permintaan Login ke Dashboard
@@ -76,9 +81,4 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'ceklogin'], function ()
     //     Route::post('/hapus-keuangan/{id}', [KeuanganController::class, 'hapus_keuangan'])->name('hapus-keuangan');
     //     Route::post('/hapus-data-keuangan/{id}', [KeuanganController::class, 'hapus_data_keuangan'])->name('hapus-data-keuangan');
     // });
-});
-
-// Route Default ketika aplikasi Pertama Kali di Akses akan langsung diarahkan ke Halaman /home
-Route::get('/', function() {
-    return redirect()->route('home');
 });
