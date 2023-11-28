@@ -19,28 +19,28 @@
 
                 <li class="menu-header">Menu</li>
                 <li class="">
-                    <a class="nav-link" href="{{ route('pembuatan-pengaduan') }}"><i class="fas fa-fire"></i>
+                    <a class="nav-link" href="#"><i class="fas fa-fire"></i>
                         <span>
                             Pengaduan
                         </span>
                     </a>
                 </li>
                 <li class="">
-                    <a class="nav-link" href="{{ route('pembuatan-surat') }}"><i class="fas fa-fire"></i>
+                    <a class="nav-link" href="#"><i class="fas fa-fire"></i>
                         <span>
                             Pembuatan Surat
                         </span>
                     </a>
                 </li>
                 <li class="">
-                    <a class="nav-link" href="{{ route('informasi-keuangan') }}"><i class="fas fa-fire"></i>
+                    <a class="nav-link" href="#"><i class="fas fa-fire"></i>
                         <span>
                             Informasi Anggaran
                         </span>
                     </a>
                 </li>
                 <li class="">
-                    <a class="nav-link" href="{{ route('pembuatan-kritiksaran') }}"><i class="fas fa-fire"></i>
+                    <a class="nav-link" href="#"><i class="fas fa-fire"></i>
                         <span>
                             Kritik dan Saran
                         </span>
@@ -48,7 +48,7 @@
                 </li>
                 @if ($users->login_level == 'admin')
                     <li class="">
-                        <a class="nav-link" href="{{ route('daftar-berita') }}"><i class="fas fa-fire"></i>
+                        <a class="nav-link" href="#"><i class="fas fa-fire"></i>
                             <span>
                                 Pemberitaan
                             </span>
@@ -69,7 +69,7 @@
             </ul>
 
             <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
-                <a href="{{ route('home') }}" class="btn btn-primary btn-lg btn-block btn-icon-split">
+                <a href="#" class="btn btn-primary btn-lg btn-block btn-icon-split">
                     <i class="fas fa-rocket"></i> Halaman Utama
                 </a>
             </div>
