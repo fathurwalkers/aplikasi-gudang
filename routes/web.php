@@ -4,11 +4,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     BackController,
     BeritaController,
+    CustomerController,
     KeuanganController,
     KritiksaranController,
     PengaduanController,
     SuratController,
-    HomeController
+    HomeController,
+    PegawaiController,
+    VendorController
 };
 
 // Route Default ketika aplikasi Pertama Kali di Akses akan langsung diarahkan ke Halaman /home
@@ -39,48 +42,37 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'ceklogin'], function ()
     Route::group(['prefix' => '/barang'], function () {
         Route::get('/', fn () => redirect()->route('daftar-berita'));
         Route::get('/data-barang', [BarangController::class, 'data_barang'])->name('data-barang');
-        Route::post('/tambah-barang', [barangController::class, 'tambah_barang'])->name('tambah-barang');
+        Route::get('/kategori-barang', [BarangController::class, 'kategori_barang'])->name('kategori-barang');
+        Route::get('/jenis-barang', [BarangController::class, 'jenis_barang'])->name('jenis-barang');
+        Route::post('/tambah-barang', [BarangController::class, 'tambah_barang'])->name('tambah-barang');
         Route::post('/hapus-barang/{id}', [BarangController::class, 'hapus_barang'])->name('hapus-barang');
         Route::post('/update-barang/{id}', [BarangController::class, 'update_barang'])->name('update-barang');
     });
 
-    // // SURAT ROUTE
-    // Route::group(['prefix' => '/surat'], function () {
-    //     Route::get('/', fn () => redirect()->route('pembuatan-surat'));
-    //     Route::get('/pembuatan-surat', [SuratController::class, 'pembuatan_surat'])->name('pembuatan-surat');
-    //     Route::get('/lihat-surat/{id}', [SuratController::class, 'lihat_surat'])->name('lihat-surat');
-    //     Route::post('/post-pembuatan-surat', [SuratController::class, 'post_pembuatan_surat'])->name('post-pembuatan-surat');
-    //     Route::post('/konfirmasi-surat', [SuratController::class, 'konfirmasi_surat'])->name('konfirmasi-surat');
-    //     Route::post('/hapus-surat/{id}', [SuratController::class, 'hapus_surat'])->name('hapus-surat');
-    // });
+    // PEGAWAI ROUTE
+    Route::group(['prefix' => '/pegawai'], function () {
+        Route::get('/', fn () => redirect()->route('daftar-berita'));
+        Route::get('/data-pegawai', [PegawaiController::class, 'data_customer'])->name('data-pegawai');
+        Route::post('/tambah-pegawai', [PegawaiController::class, 'tambah_customer'])->name('tambah-pegawai');
+        Route::post('/hapus-pegawai/{id}', [PegawaiController::class, 'hapus_customer'])->name('hapus-pegawai');
+        Route::post('/update-pegawai/{id}', [PegawaiController::class, 'update_customer'])->name('update-pegawai');
+    });
 
-    // // PENGADUAN ROUTE
-    // Route::group(['prefix' => '/pengaduan'], function () {
-    //     Route::get('/', fn () => redirect()->route('pembuatan-pengaduan'));
-    //     Route::get('/pembuatan-pengaduan', [PengaduanController::class, 'pembuatan_pengaduan'])->name('pembuatan-pengaduan');
-    //     Route::post('/post-pembuatan-pengaduan', [PengaduanController::class, 'post_pembuatan_pengaduan'])->name('post-pembuatan-pengaduan');
-    //     Route::post('/konfirmasi-pengaduan', [PengaduanController::class, 'konfirmasi_pengaduan'])->name('konfirmasi-pengaduan');
-    //     Route::post('/hapus-pengaduan/{id}', [PengaduanController::class, 'hapus_pengaduan'])->name('hapus-pengaduan');
-    // });
+    // CUSTOMER ROUTE
+    Route::group(['prefix' => '/customer'], function () {
+        Route::get('/', fn () => redirect()->route('daftar-berita'));
+        Route::get('/data-customer', [CustomerController::class, 'data_customer'])->name('data-customer');
+        Route::post('/tambah-customer', [CustomerController::class, 'tambah_customer'])->name('tambah-customer');
+        Route::post('/hapus-customer/{id}', [CustomerController::class, 'hapus_customer'])->name('hapus-customer');
+        Route::post('/update-customer/{id}', [CustomerController::class, 'update_customer'])->name('update-customer');
+    });
 
-    // // KRITIK DAN SARAN ROUTE
-    // Route::group(['prefix' => '/kritik-dan-saran'], function () {
-    //     Route::get('/', fn () => redirect()->route('pembuatan-kritiksaran'));
-    //     Route::get('/pembuatan-kritiksaran', [KritiksaranController::class, 'pembuatan_kritiksaran'])->name('pembuatan-kritiksaran');
-    //     Route::post('/post-pembuatan-kritiksaran', [KritiksaranController::class, 'post_pembuatan_kritiksaran'])->name('post-pembuatan-kritiksaran');
-    //     Route::post('/hapus-kritiksaran/{id}', [KritiksaranController::class, 'hapus_kritiksaran'])->name('hapus-kritiksaran');
-    // });
-
-    // Route::group(['prefix' => '/keuangan'], function () {
-    //     Route::get('/', fn () => redirect()->route('informasi-keuangan'));
-    //     Route::get('/informasi-keuangan', [KeuanganController::class, 'informasi_keuangan'])->name('informasi-keuangan');
-    //     Route::get('/cek-keuangan/{id}', [KeuanganController::class, 'cek_keuangan'])->name('cek-keuangan');
-    //     Route::get('/lihat-keuangan/{id}', [KeuanganController::class, 'lihat_keuangan'])->name('lihat-keuangan');
-    //     Route::post('/ubah-keuangan/{id}', [KeuanganController::class, 'ubah_keuangan'])->name('ubah-keuangan');
-    //     Route::post('/ubah-data-keuangan/{id}', [KeuanganController::class, 'ubah_data_keuangan'])->name('ubah-data-keuangan');
-    //     Route::post('/tambah-keuangan', [KeuanganController::class, 'tambah_keuangan'])->name('tambah-keuangan');
-    //     Route::post('/tambah-data-keuangan/{id}', [KeuanganController::class, 'tambah_data_keuangan'])->name('tambah-data-keuangan');
-    //     Route::post('/hapus-keuangan/{id}', [KeuanganController::class, 'hapus_keuangan'])->name('hapus-keuangan');
-    //     Route::post('/hapus-data-keuangan/{id}', [KeuanganController::class, 'hapus_data_keuangan'])->name('hapus-data-keuangan');
-    // });
+    // VENDOR ROUTE
+    Route::group(['prefix' => '/vendor'], function () {
+        Route::get('/', fn () => redirect()->route('daftar-berita'));
+        Route::get('/data-vendor', [VendorController::class, 'data_customer'])->name('data-vendor');
+        Route::post('/tambah-vendor', [VendorController::class, 'tambah_customer'])->name('tambah-vendor');
+        Route::post('/hapus-vendor/{id}', [VendorController::class, 'hapus_customer'])->name('hapus-vendor');
+        Route::post('/update-vendor/{id}', [VendorController::class, 'update_customer'])->name('update-vendor');
+    });
 });
