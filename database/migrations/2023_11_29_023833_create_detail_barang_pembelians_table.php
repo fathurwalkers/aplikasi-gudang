@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('detail_barang_pembelian', function (Blueprint $table) {
             $table->id();
 
-            $table->string('detail_pembelian_nama')->nullable();
+            $table->string('detail_pembelian_nama_barang')->nullable();
             $table->dateTime('detail_pembelian_tanggal')->nullable();
             $table->string('detail_pembelian_no_invoice')->nullable();
             $table->string('detail_pembelian_no_po')->nullable();
