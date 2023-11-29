@@ -11,6 +11,17 @@ use Illuminate\Support\{
 };
 use App\Models\{
     Login,
+    Barang,
+    Pembelian,
+    Penjualan,
+    Pegawai,
+    Jenisbarang,
+    Kategoribarang,
+    Vendor,
+    Customer,
+    DetailBarangPembelian,
+    DetailBarangPenjualan,
+    DetailBarangPerbaikan,
 };
 
 class GenerateController extends Controller
