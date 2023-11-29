@@ -90,7 +90,30 @@ class GenerateController extends Controller
             ]);
             $save_customer->save();
         }
-        $all_customer = Customer::all();
-        dd($all_customer);
+    }
+
+    public function generate_vendor()
+    {
+        $faker = Faker::create('id_ID');
+
+        for ($i=0; $i < 5; $i++) {
+            $vendor = new Vendor;
+            $vendor_nama = $faker->company();
+            $vendor_alamat = $faker->address();
+            $vendor_nomor_telepon = $faker->phoneNumber();
+            $vendor_email = $faker->email();
+
+            $save_vendor = $vendor->create([
+                'vendor_nama' => $vendor_nama,
+                'vendor_alamat' => $vendor_alamat,
+                'vendor_nohp' => $vendor_nomor_telepon,
+                'vendor_email' => $vendor_email,
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+            $save_vendor->save();
+        }
+        $all_vendor = Vendor::all();
+        dd($all_vendor);
     }
 }

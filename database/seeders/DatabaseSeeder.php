@@ -12,7 +12,20 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Faker\Factory as Faker;
 use Illuminate\Support\Arr;
-use App\Models\Login;
+use App\Models\{
+    Login,
+    Barang,
+    Pembelian,
+    Penjualan,
+    Pegawai,
+    Jenisbarang,
+    Kategoribarang,
+    Vendor,
+    Customer,
+    DetailBarangPembelian,
+    DetailBarangPenjualan,
+    DetailBarangPerbaikan,
+};
 
 class DatabaseSeeder extends Seeder
 {
@@ -157,5 +170,21 @@ class DatabaseSeeder extends Seeder
             'updated_at' => now()
         ]);
 
+        $array_jenis_barang = ["Baru", "Second Original"];
+        foreach ($array_jenis_barang as $jb) {
+            Jenisbarang::create([
+                'jenis_barang' => $jb,
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+        }
+        $array_kategori_barang = ["Mesin Tekstil", "Sparepart Mesin", "Aksesoris Mesin"];
+        foreach ($array_kategori_barang as $kb) {
+            Kategoribarang::create([
+                'kategori_barang' => $kb,
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+        }
     }
 }

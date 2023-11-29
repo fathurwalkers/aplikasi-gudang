@@ -91,4 +91,6 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'ceklogin'], function ()
 // GENERATE ROUTE
 Route::group(['prefix' => '/generate'], function () {
     Route::get('/pegawai', [GenerateController::class, 'generate_pegawai'])->name('generate-pegawai');
+    Route::get('/customer', [GenerateController::class, 'generate_customer'])->name('generate-customer');
+    Route::get('/vendor', [GenerateController::class, 'generate_vendor'])->name('generate-vendor');
 });
