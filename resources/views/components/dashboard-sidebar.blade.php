@@ -25,36 +25,27 @@
                         </span>
                     </a>
                 </li>
-                <li class="">
-                    <a class="nav-link" href="#"><i class="fas fa-fire"></i>
-                        <span>
-                            Pembuatan Surat
-                        </span>
-                    </a>
-                </li>
-                <li class="">
-                    <a class="nav-link" href="#"><i class="fas fa-fire"></i>
-                        <span>
-                            Informasi Anggaran
-                        </span>
-                    </a>
-                </li>
-                <li class="">
-                    <a class="nav-link" href="#"><i class="fas fa-fire"></i>
-                        <span>
-                            Kritik dan Saran
-                        </span>
-                    </a>
-                </li>
+
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i>
-                        <span>Laporan</span></a>
+                        <span>Pembelian</span></a>
                     <ul class="dropdown-menu">
+                        <li><a class="nav-link" href="#">Pembelian</a></li>
                         <li><a class="nav-link" href="#">Laporan Pembelian</a></li>
-                        <li><a class="nav-link" href="#">Laporan Penjualan</a></li>
-                        <li><a class="nav-link" href="#">Laporan Perbaikan</a></li>
+                        <li><a class="nav-link" href="#">Vendor</a></li>
                     </ul>
                 </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i>
+                        <span>Pembelian</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="nav-link" href="#">Pembelian</a></li>
+                        <li><a class="nav-link" href="#">Laporan Pembelian</a></li>
+                        <li><a class="nav-link" href="#">Vendor</a></li>
+                    </ul>
+                </li>
+
                 @if ($users->login_level == 'admin')
                     <li class="">
                         <a class="nav-link" href="#"><i class="fas fa-pencil-ruler"></i>
