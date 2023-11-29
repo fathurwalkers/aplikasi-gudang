@@ -81,14 +81,9 @@
         <div class="card-body">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
                         <h5 class="my-auto text-dark">Daftar Vendor</h5>
                     </div>
-                    {{-- <div class="col-sm-6 col-md-6 col-lg-6">
-                        <button class="btn btn-primary btn-md float-right">
-                            Tambah Pegawai
-                        </button>
-                    </div> --}}
                 </div>
                 <hr />
                 <div class="row">
@@ -99,8 +94,8 @@
                                     <th class="text-center text-dark">No.</th>
                                     <th class="text-center text-dark">Nama Vendor</th>
                                     <th class="text-center text-dark">Alamat</th>
-                                    <th class="text-center text-dark">No. HP / Telepon</th>
                                     <th class="text-center text-dark">Email</th>
+                                    <th class="text-center text-dark">No. HP / Telepon</th>
                                     <th class="text-center text-dark">Aksi</th>
                                 </tr>
                             </thead>
