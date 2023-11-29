@@ -28,8 +28,8 @@
                                 <label for="pegawai_nama">
                                     <h6>Nama Pegawai</h6>
                                 </label>
-                                <input type="text" class="form-control" id="pegawai_nama"
-                                    placeholder="Masukkan keterangan pengaduan..." name="pegawai_nama">
+                                <input type="text" class="form-control" id="pegawai_nama" placeholder="..."
+                                    name="pegawai_nama">
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-6 col-lg-6">
@@ -37,8 +37,8 @@
                                 <label for="pegawai_jabatan">
                                     <h6>Jabatan</h6>
                                 </label>
-                                <input type="text" class="form-control" id="pegawai_jabatan"
-                                    placeholder="Masukkan keterangan pengaduan..." name="pegawai_jabatan">
+                                <input type="text" class="form-control" id="pegawai_jabatan" placeholder="..."
+                                    name="pegawai_jabatan">
                             </div>
                         </div>
                     </div>
@@ -49,8 +49,8 @@
                                 <label for="pegawai_alamat">
                                     <h6>Alamat</h6>
                                 </label>
-                                <input type="text" class="form-control" id="pegawai_alamat"
-                                    placeholder="Masukkan keterangan pengaduan..." name="pegawai_alamat">
+                                <input type="text" class="form-control" id="pegawai_alamat" placeholder="..."
+                                    name="pegawai_alamat">
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-6 col-lg-6">
@@ -58,8 +58,8 @@
                                 <label for="pegawai_nohp">
                                     <h6>No. HP / Telepon</h6>
                                 </label>
-                                <input type="text" class="form-control" id="pegawai_nohp"
-                                    placeholder="Masukkan keterangan pengaduan..." name="pegawai_nohp">
+                                <input type="text" class="form-control" id="pegawai_nohp" placeholder="..."
+                                    name="pegawai_nohp">
                             </div>
                         </div>
                     </div>

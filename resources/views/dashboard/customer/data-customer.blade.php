@@ -19,26 +19,26 @@
                     @csrf
 
                     <p class="text-dark">
-                        Silahkan masukkan Data Pegawai baru yang ingin ditambahkan pada form dibawah ini.
+                        Silahkan masukkan Data Customer baru yang ingin ditambahkan pada form dibawah ini.
                     </p>
 
                     <div class="row">
                         <div class="col-sm-6 col-md-6 col-lg-6">
                             <div class="form-group">
-                                <label for="pegawai_nama">
-                                    <h6>Nama Pegawai</h6>
+                                <label for="customer_nama">
+                                    <h6>Nama Customer</h6>
                                 </label>
-                                <input type="text" class="form-control" id="pegawai_nama"
-                                    placeholder="Masukkan keterangan pengaduan..." name="pegawai_nama">
+                                <input type="text" class="form-control" id="customer_nama" placeholder="..."
+                                    name="customer_nama">
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-6 col-lg-6">
                             <div class="form-group">
-                                <label for="pegawai_jabatan">
-                                    <h6>Jabatan</h6>
+                                <label for="customer_email">
+                                    <h6>Email</h6>
                                 </label>
-                                <input type="text" class="form-control" id="pegawai_jabatan"
-                                    placeholder="Masukkan keterangan pengaduan..." name="pegawai_jabatan">
+                                <input type="text" class="form-control" id="customer_email" placeholder="..."
+                                    name="customer_email">
                             </div>
                         </div>
                     </div>
@@ -46,20 +46,20 @@
                     <div class="row">
                         <div class="col-sm-6 col-md-6 col-lg-6">
                             <div class="form-group">
-                                <label for="pegawai_alamat">
+                                <label for="customer_alamat">
                                     <h6>Alamat</h6>
                                 </label>
-                                <input type="text" class="form-control" id="pegawai_alamat"
-                                    placeholder="Masukkan keterangan pengaduan..." name="pegawai_alamat">
+                                <input type="text" class="form-control" id="customer_alamat" placeholder="..."
+                                    name="customer_alamat">
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-6 col-lg-6">
                             <div class="form-group">
-                                <label for="pegawai_nohp">
+                                <label for="customer_nohp">
                                     <h6>No. HP / Telepon</h6>
                                 </label>
-                                <input type="text" class="form-control" id="pegawai_nohp"
-                                    placeholder="Masukkan keterangan pengaduan..." name="pegawai_nohp">
+                                <input type="text" class="form-control" id="customer_nohp" placeholder="..."
+                                    name="customer_nohp">
                             </div>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-end">
                             <button type="submit" class="btn btn-info btn-md">
-                                Tambah Data Pegawai
+                                Tambah Data Customer
                             </button>
                         </div>
                     </div>
@@ -110,9 +110,9 @@
                                     <tr>
                                         <td class="text-center text-dark">{{ $loop->iteration }}</td>
                                         <td class="text-center text-dark">{{ $item->customer_nama }}</td>
-                                        <td class="text-center text-dark">{{ $item->customer_jabatan }}</td>
                                         <td class="text-center text-dark">{{ $item->customer_alamat }}</td>
                                         <td class="text-center text-dark">{{ $item->customer_nohp }}</td>
+                                        <td class="text-center text-dark">{{ $item->customer_email }}</td>
                                         <td class="d-flex justify-content-center">
                                             <button type="button" id="buttonlihat{{ $item->id }}"
                                                 class="btn btn-sm btn-warning text-dark" data-toggle="modal"
@@ -139,7 +139,7 @@
                                                             method="POST">
                                                             @csrf
                                                             <div class="modal-body">
-                                                                Apakah anda yakin ingin menghapus data pengaduan ini?
+                                                                Apakah anda yakin ingin menghapus data Customer ini?
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary"

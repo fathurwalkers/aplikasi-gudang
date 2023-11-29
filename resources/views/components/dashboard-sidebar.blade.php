@@ -45,7 +45,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="nav-link" href="#">Data Penjualan</a></li>
                         <li><a class="nav-link" href="#">Laporan Penjualan</a></li>
-                        <li><a class="nav-link" href="#">Data Customer</a></li>
+                        <li><a class="nav-link" href="{{ route('data-customer') }}">Data Customer</a></li>
                     </ul>
                 </li>
 

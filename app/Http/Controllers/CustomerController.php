@@ -34,39 +34,39 @@ class CustomerController extends Controller
         ]);
     }
 
-    public function tambah_pegawai(Request $request)
+    public function tambah_customer(Request $request)
     {
-        $pegawai_nama = $request->pegawai_nama;
-        $pegawai_jabatan = $request->pegawai_jabatan;
-        $pegawai_alamat = $request->pegawai_alamat;
-        $pegawai_nohp = $request->pegawai_nohp;
+        $customer_nama = $request->customer_nama;
+        $customer_email = $request->customer_email;
+        $customer_alamat = $request->customer_alamat;
+        $customer_nohp = $request->customer_nohp;
 
-        $pegawai = new Pegawai;
-        $save_pegawai = $pegawai->create([
-            'pegawai_nama' => $pegawai_nama,
-            'pegawai_jabatan' => $pegawai_jabatan,
-            'pegawai_alamat' => $pegawai_alamat,
-            'pegawai_nohp' => $pegawai_nohp,
+        $customer = new customer;
+        $save_customer = $customer->create([
+            'customer_nama' => $customer_nama,
+            'customer_alamat' => $customer_alamat,
+            'customer_nohp' => $customer_nohp,
+            'customer_email' => $customer_email,
             'created_at' => now(),
             'updated_at' => now()
         ]);
-        $save_pegawai->save();
-        if ($save_pegawai == true) {
-            return redirect()->route('data-pegawai')->with('status', 'Pegawai telah berhasil ditambahkan!');
+        $save_customer->save();
+        if ($save_customer == true) {
+            return redirect()->route('data-customer')->with('status', 'customer telah berhasil ditambahkan!');
         } else {
-            return redirect()->route('data-pegawai')->with('status', 'Terjadi kesalahan. Data tidak dapat ditambahkan.');
+            return redirect()->route('data-customer')->with('status', 'Terjadi kesalahan. Data tidak dapat ditambahkan.');
         }
 
     }
 
-    public function hapus_pegawai(Request $request, $id)
+    public function hapus_customer(Request $request, $id)
     {
-        $pegawai = Pegawai::find($id);
-        $pegawai_hapus = $pegawai->forceDelete();
-        if ($pegawai_hapus == true) {
-            return redirect()->route('data-pegawai')->with('status', 'Pegawai telah berhasil dihapus!');
+        $customer = Customer::find($id);
+        $customer_hapus = $customer->forceDelete();
+        if ($customer_hapus == true) {
+            return redirect()->route('data-customer')->with('status', 'Customer telah berhasil dihapus!');
         } else {
-            return redirect()->route('data-pegawai')->with('status', 'Terjadi kesalahan. Data tidak dapat dihapus.');
+            return redirect()->route('data-customer')->with('status', 'Terjadi kesalahan. Data tidak dapat dihapus.');
         }
     }
 }
