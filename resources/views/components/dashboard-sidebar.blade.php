@@ -35,7 +35,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="nav-link" href="#">Data Pembelian</a></li>
                         <li><a class="nav-link" href="#">Laporan Pembelian</a></li>
-                        <li><a class="nav-link" href="#">Data Vendor</a></li>
+                        <li><a class="nav-link" href="{{ route('data-vendor') }}">Data Vendor</a></li>
                     </ul>
                 </li>
 
