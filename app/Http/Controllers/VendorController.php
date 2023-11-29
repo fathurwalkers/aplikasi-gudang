@@ -26,47 +26,47 @@ use App\Models\{
 
 class VendorController extends Controller
 {
-    public function data_customer()
+    public function data_vendor()
     {
-        $customer = customer::all();
-        return view('dashboard.customer.data-customer', [
-            'customer' => $customer
+        $vendor = vendor::all();
+        return view('dashboard.vendor.data-vendor', [
+            'vendor' => $vendor
         ]);
     }
 
-    public function tambah_customer(Request $request)
+    public function tambah_vendor(Request $request)
     {
-        $customer_nama = $request->customer_nama;
-        $customer_email = $request->customer_email;
-        $customer_alamat = $request->customer_alamat;
-        $customer_nohp = $request->customer_nohp;
+        $vendor_nama = $request->vendor_nama;
+        $vendor_email = $request->vendor_email;
+        $vendor_alamat = $request->vendor_alamat;
+        $vendor_nohp = $request->vendor_nohp;
 
-        $customer = new customer;
-        $save_customer = $customer->create([
-            'customer_nama' => $customer_nama,
-            'customer_alamat' => $customer_alamat,
-            'customer_nohp' => $customer_nohp,
-            'customer_email' => $customer_email,
+        $vendor = new Vendor;
+        $save_vendor = $vendor->create([
+            'vendor_nama' => $vendor_nama,
+            'vendor_alamat' => $vendor_alamat,
+            'vendor_nohp' => $vendor_nohp,
+            'vendor_email' => $vendor_email,
             'created_at' => now(),
             'updated_at' => now()
         ]);
-        $save_customer->save();
-        if ($save_customer == true) {
-            return redirect()->route('data-customer')->with('status', 'customer telah berhasil ditambahkan!');
+        $save_vendor->save();
+        if ($save_vendor == true) {
+            return redirect()->route('data-vendor')->with('status', 'Data Vendor telah berhasil ditambahkan!');
         } else {
-            return redirect()->route('data-customer')->with('status', 'Terjadi kesalahan. Data tidak dapat ditambahkan.');
+            return redirect()->route('data-vendor')->with('status', 'Terjadi kesalahan. Data tidak dapat ditambahkan.');
         }
 
     }
 
-    public function hapus_customer(Request $request, $id)
+    public function hapus_vendor(Request $request, $id)
     {
-        $customer = Customer::find($id);
-        $customer_hapus = $customer->forceDelete();
-        if ($customer_hapus == true) {
-            return redirect()->route('data-customer')->with('status', 'Customer telah berhasil dihapus!');
+        $vendor = Vendor::find($id);
+        $vendor_hapus = $vendor->forceDelete();
+        if ($vendor_hapus == true) {
+            return redirect()->route('data-vendor')->with('status', 'Data telah berhasil dihapus!');
         } else {
-            return redirect()->route('data-customer')->with('status', 'Terjadi kesalahan. Data tidak dapat dihapus.');
+            return redirect()->route('data-vendor')->with('status', 'Terjadi kesalahan. Data tidak dapat dihapus.');
         }
     }
 }
