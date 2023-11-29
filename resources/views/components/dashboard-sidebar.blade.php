@@ -18,21 +18,14 @@
                 </li>
 
                 <li class="menu-header">Menu</li>
-                <li class="">
-                    <a class="nav-link" href="#"><i class="fas fa-fire"></i>
-                        <span>
-                            Pengaduan
-                        </span>
-                    </a>
-                </li>
 
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i>
-                        <span>Pembelian</span></a>
+                        <span>Barang</span></a>
                     <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="#">Pembelian</a></li>
-                        <li><a class="nav-link" href="#">Laporan Pembelian</a></li>
-                        <li><a class="nav-link" href="#">Vendor</a></li>
+                        <li><a class="nav-link" href="#">Data Barang</a></li>
+                        <li><a class="nav-link" href="#">Kategori Barang</a></li>
+                        <li><a class="nav-link" href="#">Jenis Barang</a></li>
                     </ul>
                 </li>
 
@@ -40,9 +33,35 @@
                     <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i>
                         <span>Pembelian</span></a>
                     <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="#">Pembelian</a></li>
+                        <li><a class="nav-link" href="#">Data Pembelian</a></li>
                         <li><a class="nav-link" href="#">Laporan Pembelian</a></li>
-                        <li><a class="nav-link" href="#">Vendor</a></li>
+                        <li><a class="nav-link" href="#">Data Vendor</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i>
+                        <span>Penjualan</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="nav-link" href="#">Data Penjualan</a></li>
+                        <li><a class="nav-link" href="#">Laporan Penjualan</a></li>
+                        <li><a class="nav-link" href="#">Data Customer</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i>
+                        <span>Perbaikan</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="nav-link" href="#">Laporan Data Perbaikan</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i>
+                        <span>Manajemen</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="nav-link" href="#">Data Pegawai</a></li>
                     </ul>
                 </li>
 
