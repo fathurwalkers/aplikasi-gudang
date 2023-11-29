@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\{
     Pembelian,
-    Barang
+    DetailBarangPenjualan,
+    DetailBarangPerbaikan,
+    Barang,
 };
 
 class DetailBarangPembelian extends Model
@@ -24,5 +26,15 @@ class DetailBarangPembelian extends Model
     public function barang()
     {
         return $this->belongsTo(Barang::class);
+    }
+
+    public function detail_barang_penjualan()
+    {
+        return $this->hasMany(DetailBarangPenjualan::class);
+    }
+
+    public function detail_barang_perbaikan()
+    {
+        return $this->hasMany(DetailBarangPerbaikan::class);
     }
 }
