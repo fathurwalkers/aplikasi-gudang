@@ -61,7 +61,7 @@
                     <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i>
                         <span>Manajemen</span></a>
                     <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="#">Data Pegawai</a></li>
+                        <li><a class="nav-link" href="{{ route('data-pegawai') }}">Data Pegawai</a></li>
                     </ul>
                 </li>
 

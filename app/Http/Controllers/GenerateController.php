@@ -126,7 +126,7 @@ class GenerateController extends Controller
             $array_seri_barang = ["Normal", "Super", "Ultra", "Pro", "Max"];
             $array_satuan = [1, 2];
 
-            $barang_nama = Arr::random($array_nama_barang) . Str::random(10) . Arr::random($array_seri_barang);
+            $barang_nama = Arr::random($array_nama_barang) . " " . Str::random(10) . " " . Arr::random($array_seri_barang);
             $barang_satuan = $faker->randomNumber(Arr::random($array_satuan));
             $jenis_barang = Arr::random($array_jenis_barang);
             $kategori_barang = Arr::random($array_kategori_barang);
@@ -143,7 +143,13 @@ class GenerateController extends Controller
             ]);
             $save_barang->save();
         }
-        $all_barang = Barang::all();
-        dd($all_barang);
+    }
+
+    public function generate_semua()
+    {
+        $this->generate_pegawai();
+        $this->generate_customer();
+        $this->generate_vendor();
+        $this->generate_barang();
     }
 }

@@ -94,4 +94,7 @@ Route::group(['prefix' => '/generate'], function () {
     Route::get('/customer', [GenerateController::class, 'generate_customer'])->name('generate-customer');
     Route::get('/vendor', [GenerateController::class, 'generate_vendor'])->name('generate-vendor');
     Route::get('/barang', [GenerateController::class, 'generate_barang'])->name('generate-barang');
+
+    // GENERATE SEMUA DATA
+    Route::get('/semua', [GenerateController::class, 'generate_semua'])->name('generate-semua');
 });
