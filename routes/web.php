@@ -3,9 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     BackController,
+    BarangController,
     CustomerController,
     PegawaiController,
     PembelianController,
+    PenjualanController,
     VendorController
 };
 
@@ -33,10 +35,16 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'ceklogin'], function ()
     // Default Route untuk Dashboard
     Route::get('/', [BackController::class, 'index'])->name('dashboard');
 
-    // BERITA ROUTE
+    // PEMBELIAN ROUTE
     Route::group(['prefix' => '/pembelian'], function () {
         Route::get('/', fn() => redirect()->route('daftar-berita'));
         Route::get('/data-pembelian', [PembelianController::class, 'data_pembelian'])->name('data-pembelian');
+    });
+
+    // PENJUALAN ROUTE
+    Route::group(['prefix' => '/penjualan'], function () {
+        Route::get('/', fn() => redirect()->route('daftar-berita'));
+        Route::get('/data-penjualan', [PenjualanController::class, 'data_penjualan'])->name('data-penjualan');
     });
 
     // BERITA ROUTE
@@ -53,10 +61,10 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'ceklogin'], function ()
     // PEGAWAI ROUTE
     Route::group(['prefix' => '/pegawai'], function () {
         Route::get('/', fn () => redirect()->route('daftar-berita'));
-        Route::get('/data-pegawai', [PegawaiController::class, 'data_customer'])->name('data-pegawai');
-        Route::post('/tambah-pegawai', [PegawaiController::class, 'tambah_customer'])->name('tambah-pegawai');
-        Route::post('/hapus-pegawai/{id}', [PegawaiController::class, 'hapus_customer'])->name('hapus-pegawai');
-        Route::post('/update-pegawai/{id}', [PegawaiController::class, 'update_customer'])->name('update-pegawai');
+        Route::get('/data-pegawai', [PegawaiController::class, 'data_pegawai'])->name('data-pegawai');
+        Route::post('/tambah-pegawai', [PegawaiController::class, 'tambah_pegawai'])->name('tambah-pegawai');
+        Route::post('/hapus-pegawai/{id}', [PegawaiController::class, 'hapus_pegawai'])->name('hapus-pegawai');
+        Route::post('/update-pegawai/{id}', [PegawaiController::class, 'update_pegawai'])->name('update-pegawai');
     });
 
     // CUSTOMER ROUTE
@@ -71,9 +79,9 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'ceklogin'], function ()
     // VENDOR ROUTE
     Route::group(['prefix' => '/vendor'], function () {
         Route::get('/', fn () => redirect()->route('daftar-berita'));
-        Route::get('/data-vendor', [VendorController::class, 'data_customer'])->name('data-vendor');
-        Route::post('/tambah-vendor', [VendorController::class, 'tambah_customer'])->name('tambah-vendor');
-        Route::post('/hapus-vendor/{id}', [VendorController::class, 'hapus_customer'])->name('hapus-vendor');
-        Route::post('/update-vendor/{id}', [VendorController::class, 'update_customer'])->name('update-vendor');
+        Route::get('/data-vendor', [VendorController::class, 'data_vendor'])->name('data-vendor');
+        Route::post('/tambah-vendor', [VendorController::class, 'tambah_vendor'])->name('tambah-vendor');
+        Route::post('/hapus-vendor/{id}', [VendorController::class, 'hapus_vendor'])->name('hapus-vendor');
+        Route::post('/update-vendor/{id}', [VendorController::class, 'update_vendor'])->name('update-vendor');
     });
 });
