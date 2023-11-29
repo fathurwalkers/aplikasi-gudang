@@ -58,7 +58,39 @@ class GenerateController extends Controller
             ]);
             $save_pegawai->save();
         }
-        $all_pegawai = Pegawai::all();
-        dd($all_pegawai);
+    }
+
+    public function generate_customer()
+    {
+        $faker = Faker::create('id_ID');
+
+        for ($i=0; $i < 5; $i++) {
+            $customer = new Customer;
+            $raw_gender = ["L", "P"];
+            $gender = Arr::random($raw_gender);
+            $customer_email = $faker->email();
+            $customer_alamat = $faker->address();
+            $customer_nomor_telepon = $faker->phoneNumber();
+            switch ($gender) {
+                case "L":
+                    $customer_nama = $faker->firstNameMale() . " " . $faker->lastNameMale();
+                    break;
+                case "P":
+                    $customer_nama = $faker->firstNameFemale() . " " . $faker->lastNameFemale();
+                    break;
+            }
+
+            $save_customer = $customer->create([
+                'customer_nama' => $customer_nama,
+                'customer_alamat' => $customer_alamat,
+                'customer_nohp' => $customer_nomor_telepon,
+                'customer_email' => $customer_email,
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+            $save_customer->save();
+        }
+        $all_customer = Customer::all();
+        dd($all_customer);
     }
 }
