@@ -26,47 +26,59 @@ use App\Models\{
 
 class BarangController extends Controller
 {
-    public function data_vendor()
+    public function data_barang()
     {
-        $vendor = vendor::all();
-        return view('dashboard.vendor.data-vendor', [
-            'vendor' => $vendor
+        $barang = Barang::all();
+        $jenis_barang = Jenisbarang::all();
+        $kategori_barang = Kategoribarang::all();
+        return view('dashboard.barang.data-barang', [
+            'barang' => $barang,
+            'jenis_barang' => $jenis_barang,
+            'kategori_barang' => $kategori_barang
         ]);
     }
 
-    public function tambah_vendor(Request $request)
+    public function tambah_barang(Request $request)
     {
-        $vendor_nama = $request->vendor_nama;
-        $vendor_email = $request->vendor_email;
-        $vendor_alamat = $request->vendor_alamat;
-        $vendor_nohp = $request->vendor_nohp;
+        $barang_nama = $request->barang_nama;
+        $barang_satuan = $request->barang_satuan;
+        $barang_sisa_stok_gudang = $request->barang_sisa_stok_gudang;
+        $jenis_barang = $request->jenis_barang;
+        $kategori_barang = $request->kategori_barang;
 
-        $vendor = new Vendor;
-        $save_vendor = $vendor->create([
-            'vendor_nama' => $vendor_nama,
-            'vendor_alamat' => $vendor_alamat,
-            'vendor_nohp' => $vendor_nohp,
-            'vendor_email' => $vendor_email,
+        $id_jenis = intval($jenis_barang);
+        $id_kategori = intval($kategori_barang);
+
+        $jenis_id = Jenisbarang::find($id_jenis);
+        $kategori_id = Kategoribarang::find($id_kategori);
+
+        $barang = new Barang;
+        $save_barang = $barang->create([
+            'barang_nama' => $barang_nama,
+            'barang_satuan' => $barang_satuan,
+            'barang_sisa_stok_gudang' => $barang_sisa_stok_gudang,
+            'jenisbarang_id' => $jenis_id->id,
+            'kategoribarang_id' => $kategori_id->id,
             'created_at' => now(),
             'updated_at' => now()
         ]);
-        $save_vendor->save();
-        if ($save_vendor == true) {
-            return redirect()->route('data-vendor')->with('status', 'Data Vendor telah berhasil ditambahkan!');
+        $save_barang->save();
+        if ($save_barang == true) {
+            return redirect()->route('data-barang')->with('status', 'Data barang telah berhasil ditambahkan!');
         } else {
-            return redirect()->route('data-vendor')->with('status', 'Terjadi kesalahan. Data tidak dapat ditambahkan.');
+            return redirect()->route('data-barang')->with('status', 'Terjadi kesalahan. Data tidak dapat ditambahkan.');
         }
 
     }
 
-    public function hapus_vendor(Request $request, $id)
+    public function hapus_barang(Request $request, $id)
     {
-        $vendor = Vendor::find($id);
-        $vendor_hapus = $vendor->forceDelete();
-        if ($vendor_hapus == true) {
-            return redirect()->route('data-vendor')->with('status', 'Data telah berhasil dihapus!');
+        $barang = Barang::find($id);
+        $barang_hapus = $barang->forceDelete();
+        if ($barang_hapus == true) {
+            return redirect()->route('data-barang')->with('status', 'Data telah berhasil dihapus!');
         } else {
-            return redirect()->route('data-vendor')->with('status', 'Terjadi kesalahan. Data tidak dapat dihapus.');
+            return redirect()->route('data-barang')->with('status', 'Terjadi kesalahan. Data tidak dapat dihapus.');
         }
     }
 }

@@ -23,7 +23,7 @@
                     <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i>
                         <span>Barang</span></a>
                     <ul class="dropdown-menu">
-                        <li><a class="nav-link" href="#">Data Barang</a></li>
+                        <li><a class="nav-link" href="{{ route('data-barang') }}">Data Barang</a></li>
                         <li><a class="nav-link" href="#">Kategori Barang</a></li>
                         <li><a class="nav-link" href="#">Jenis Barang</a></li>
                     </ul>
