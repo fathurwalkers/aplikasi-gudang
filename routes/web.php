@@ -3,14 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     BackController,
-    BeritaController,
     CustomerController,
-    KeuanganController,
-    KritiksaranController,
-    PengaduanController,
-    SuratController,
-    HomeController,
     PegawaiController,
+    PembelianController,
     VendorController
 };
 
@@ -37,6 +32,12 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'ceklogin'], function ()
 
     // Default Route untuk Dashboard
     Route::get('/', [BackController::class, 'index'])->name('dashboard');
+
+    // BERITA ROUTE
+    Route::group(['prefix' => '/pembelian'], function () {
+        Route::get('/', fn() => redirect()->route('daftar-berita'));
+        Route::get('/data-pembelian', [PembelianController::class, 'data_pembelian'])->name('data-pembelian');
+    });
 
     // BERITA ROUTE
     Route::group(['prefix' => '/barang'], function () {
