@@ -31,16 +31,18 @@ Route::post('/logout', [BackController::class, 'logout'])->name('logout');
 
 // Route untuk Halaman Dashboard Aplikasi
 Route::group(['prefix' => '/dashboard', 'middleware' => 'ceklogin'], function () {
+
+    // Default Route untuk Dashboard
     Route::get('/', [BackController::class, 'index'])->name('dashboard');
 
-    // // BERITA ROUTE
-    // Route::group(['prefix' => '/berita'], function () {
-    //     Route::get('/', fn () => redirect()->route('daftar-berita'));
-    //     Route::get('/daftar-berita', [BeritaController::class, 'daftar_berita'])->name('daftar-berita');
-    //     Route::post('/post-berita', [BeritaController::class, 'post_berita'])->name('post-berita');
-    //     Route::post('/hapus-berita/{id}', [BeritaController::class, 'hapus_berita'])->name('hapus-berita');
-    //     Route::post('/update-berita/{id}', [BeritaController::class, 'update_berita'])->name('update-berita');
-    // });
+    // BERITA ROUTE
+    Route::group(['prefix' => '/barang'], function () {
+        Route::get('/', fn () => redirect()->route('daftar-berita'));
+        Route::get('/data-barang', [BarangController::class, 'data_barang'])->name('data-barang');
+        Route::post('/tambah-barang', [barangController::class, 'tambah_barang'])->name('tambah-barang');
+        Route::post('/hapus-barang/{id}', [BarangController::class, 'hapus_barang'])->name('hapus-barang');
+        Route::post('/update-barang/{id}', [BarangController::class, 'update_barang'])->name('update-barang');
+    });
 
     // // SURAT ROUTE
     // Route::group(['prefix' => '/surat'], function () {
