@@ -46,25 +46,23 @@
                         </span>
                     </a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i>
+                        <span>Laporan</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="nav-link" href="#">Laporan Pembelian</a></li>
+                        <li><a class="nav-link" href="#">Laporan Penjualan</a></li>
+                        <li><a class="nav-link" href="#">Laporan Perbaikan</a></li>
+                    </ul>
+                </li>
                 @if ($users->login_level == 'admin')
                     <li class="">
-                        <a class="nav-link" href="#"><i class="fas fa-fire"></i>
+                        <a class="nav-link" href="#"><i class="fas fa-pencil-ruler"></i>
                             <span>
-                                Pemberitaan
+                                Settings
                             </span>
                         </a>
                     </li>
-                    {{-- <li class="menu-header">Settings</li>
-                    <li>
-                        <a class="nav-link" href="credits.html">
-                            <i class="fas fa-pencil-ruler">
-
-                            </i>
-                            <span>
-                                Pengaturan Aplikasi
-                            </span>
-                        </a>
-                    </li> --}}
                 @endif
             </ul>
 
