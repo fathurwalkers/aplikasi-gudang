@@ -4,7 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Vendor;
+use App\Models\{
+    Vendor,
+    DetailBarangPembelian
+};
 
 class Pembelian extends Model
 {
@@ -16,5 +19,10 @@ class Pembelian extends Model
     public function vendor()
     {
         return $this->belongsTo(Vendor::class);
+    }
+
+    public function detail_barang_pembelian()
+    {
+        return $this->hasMany(DetailBarangPembelian::class);
     }
 }

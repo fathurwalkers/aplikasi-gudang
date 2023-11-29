@@ -30,10 +30,10 @@ class Barang extends Model
 
     public function detail_barang_pembelian()
     {
-        return $this->belongsTo(DetailBarangPembelian::class);
+        return $this->hasMany(DetailBarangPembelian::class);
     }
     public function detail_barang_penjualan()
     {
-        return $this->belongsTo(DetailBarangPenjualan::class);
+        return $this->hasMany(DetailBarangPenjualan::class);
     }
 }
