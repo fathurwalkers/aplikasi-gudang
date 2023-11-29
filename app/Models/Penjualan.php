@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Customer;
 
 class Penjualan extends Model
 {
@@ -11,4 +12,9 @@ class Penjualan extends Model
     protected $table = "penjualan";
     protected $guarded = [];
     protected $primaryKey = "id";
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class);
+    }
 }
