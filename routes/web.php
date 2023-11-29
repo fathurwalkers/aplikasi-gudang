@@ -5,6 +5,7 @@ use App\Http\Controllers\{
     BackController,
     BarangController,
     CustomerController,
+    GenerateController,
     PegawaiController,
     PembelianController,
     PenjualanController,
@@ -84,4 +85,10 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'ceklogin'], function ()
         Route::post('/hapus-vendor/{id}', [VendorController::class, 'hapus_vendor'])->name('hapus-vendor');
         Route::post('/update-vendor/{id}', [VendorController::class, 'update_vendor'])->name('update-vendor');
     });
+
+});
+
+// GENERATE ROUTE
+Route::group(['prefix' => '/generate'], function () {
+    Route::get('/pegawai', [GenerateController::class, 'generate_pegawai'])->name('generate-pegawai');
 });
