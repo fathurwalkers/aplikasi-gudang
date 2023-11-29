@@ -7,7 +7,7 @@
                 </li>
             </ul>
         </form>
-        <h4 class="d-flex mr-auto my-auto text-white">SISTEM INFORMASI PENGADUAN</h4>
+        <h4 class="d-flex mr-auto my-auto text-white">APLIKASI MANAJEMEN GUDANG</h4>
         <ul class="navbar-nav navbar-right">
             <li class="dropdown"><a href="#" data-toggle="dropdown"
                     class="nav-link dropdown-toggle nav-link-lg nav-link-user">
