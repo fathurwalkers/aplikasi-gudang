@@ -113,7 +113,37 @@ class GenerateController extends Controller
             ]);
             $save_vendor->save();
         }
-        $all_vendor = Vendor::all();
-        dd($all_vendor);
+    }
+
+    public function generate_barang()
+    {
+        $faker = Faker::create('id_ID');
+        for ($i=0; $i < 10; $i++) {
+            $barang = new Barang;
+            $array_jenis_barang = Jenisbarang::all()->toArray();
+            $array_kategori_barang = Kategoribarang::all()->toArray();
+            $array_nama_barang = ["Mesin", "Sparepart", "Aksesoris", "Mesin Tekstil"];
+            $array_seri_barang = ["Normal", "Super", "Ultra", "Pro", "Max"];
+            $array_satuan = [1, 2];
+
+            $barang_nama = Arr::random($array_nama_barang) . Str::random(10) . Arr::random($array_seri_barang);
+            $barang_satuan = $faker->randomNumber(Arr::random($array_satuan));
+            $jenis_barang = Arr::random($array_jenis_barang);
+            $kategori_barang = Arr::random($array_kategori_barang);
+            $barang_sisa_stok_gudang = $faker->randomNumber(Arr::random($array_satuan));
+
+            $save_barang = $barang->create([
+                'barang_nama' => $barang_nama,
+                'barang_satuan' => $barang_satuan,
+                'barang_sisa_stok_gudang' => $barang_sisa_stok_gudang,
+                'kategoribarang_id' => $kategori_barang["id"],
+                'jenisbarang_id' => $jenis_barang["id"],
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+            $save_barang->save();
+        }
+        $all_barang = Barang::all();
+        dd($all_barang);
     }
 }
